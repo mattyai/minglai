@@ -1,0 +1,176 @@
+body{
+    overflow: hidden;
+}
+
+#root {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.waiting-room-wrapper{
+    display: flex;
+    align-items: center;
+    width: 80vw;
+}
+
+.self-video-container {
+    min-width: 810px;
+    height: 500px;
+    margin-inline-end: 50px;
+}
+
+.waiting-room {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-block-end: 10px;
+}
+
+.waiting-room img {
+    height: 2em;
+    border-radius: 50%;
+    will-change: transform;
+    transition: transform 300ms;
+
+/*    keep aspect ratio 3:2, center the image with cover */
+    width: 2em;
+    object-fit: cover;
+    object-position: top;
+    background: white;
+}
+
+.meeting-users {
+    display: flex;
+    width: 280px;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.meeting-users > div {
+    background-color: #3b4043;
+    border: 2px solid #333;
+    border-radius: 10px;
+    display: flex;
+    width: 280px;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    place-content: stretch flex-end;
+    margin-bottom: 20px;
+}
+
+.meeting-users > d
+
+.meeting-users img {
+    height: 2em;
+    border-radius: 50%;
+    will-change: transform;
+    transition: transform 300ms;
+}
+
+.meeting-users img:hover {
+    transform: scale(1.1);
+}
+
+.meeting-users div.active div{
+    animation: ripple 3s infinite;
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 #646cffaa;
+    }
+    100% {
+        box-shadow: 0 0 0 1em #646cffaa;
+    }
+}
+
+.voice-animation {
+    animation: voice 1s infinite;
+}
+
+@keyframes voice {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* VoiceAnimation.css */
+.voice-container {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    position: absolute;
+    padding-top: 10px;
+}
+
+.voice-bar {
+    width: 4px;
+    height: 10px;
+    background-color: #646cffaa;
+    margin: 0 2px;
+    display: inline-block;
+    animation: voice 1.2s infinite ease-in-out;
+}
+
+.voice-bar:nth-child(2) {
+    animation-delay: -1.1s;
+}
+.voice-bar:nth-child(3) {
+    animation-delay: -1.0s;
+}
+.voice-bar:nth-child(4) {
+    animation-delay: -0.9s;
+}
+.voice-bar:nth-child(5) {
+    animation-delay: -0.8s;
+}
+
+@keyframes voice {
+    0%, 100% {
+        transform: scaleY(0.5);
+    }
+    50% {
+        transform: scaleY(2);
+    }
+}
+
+.voice-animation__wave {
+    width: 10px;
+    height: 20px;
+    background-color: #007bff;
+    margin-right: 5px;
+    animation: wave 1s infinite;
+}
+
+.voice-animation__wave:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.voice-animation__wave:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+@keyframes wave {
+    0% {
+        height: 20px;
+    }
+
+    50% {
+        height: 10px;
+    }
+
+    100% {
+        height: 20px;
+    }
+}
